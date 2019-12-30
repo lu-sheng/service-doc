@@ -1,1 +1,20 @@
-site_name: My Docs
+site_name: 供应链项目Java服务使用说明文档
+theme:
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  language: 'zh'
+  name: material
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+
+extra:
+  search:
+    language: 'en'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
