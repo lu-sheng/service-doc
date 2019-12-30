@@ -36,7 +36,7 @@
     
     
       
-        <title>版本更新说明 - 供应链项目Java服务使用说明文档</title>
+        <title>批量离职解绑员工服务 - 供应链项目Java服务使用说明文档</title>
       
     
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                版本更新说明
+                批量离职解绑员工服务
               
             </span>
           
@@ -200,11 +200,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="批量离职解绑员工服务使用说明文档.html" title="批量离职解绑员工服务" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="批量离职解绑员工服务使用说明文档.html" title="批量离职解绑员工服务" class="md-nav__link md-nav__link--active">
       批量离职解绑员工服务
     </a>
+    
   </li>
 
     
@@ -236,20 +245,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="查询员工信息服务使用说明文档.html" title="版本更新说明" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="查询员工信息服务使用说明文档.html" title="版本更新说明" class="md-nav__link">
       版本更新说明
     </a>
-    
   </li>
 
     
@@ -305,7 +305,7 @@
               
                 
                 
-                <h1 id="_1">版本更新说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h1 id="_1">批量离职解绑员工服务<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -336,26 +336,37 @@
 </tr>
 </tbody>
 </table>
-<h1 id="_2">查询员工信息服务<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
-<li>
-<p>messagetype
-    <code>busiservice.pcbuniontrans.querystaffinformation</code> </p>
-</li>
-<li>
-<p>messageContent 参数示例
-    <code>{ 
-             "productid": "pcb_uniontrans",
-        "spaceid":"pcb_uniontrans",
-        "systemid":"10201",
-        "enterprise_uid":"2df18a20-f98b-4378-a752-97b9f6e386c9",
-        "page_num":1,
-        "page_size":10
-           }</code></p>
-</li>
-<li>
-<p>messageContent参数说明</p>
-</li>
+<li>messagetype</li>
+</ul>
+<div class="codehilite"><pre><span></span>     busiservice.pcbuniontrans.staffoperation
+</pre></div>
+
+
+<ul>
+<li>messageContent 参数示例</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;productid&quot;</span><span class="p">:</span> <span class="s2">&quot;pcb_uniontrans&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;spaceid&quot;</span><span class="p">:</span> <span class="s2">&quot;pcb_uniontrans&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;systemid&quot;</span><span class="p">:</span> <span class="s2">&quot;10201&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;subserver&quot;</span><span class="p">:</span> <span class="s2">&quot;unlink&quot;</span><span class="p">,</span> 
+  <span class="nt">&quot;staff_data&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;staff_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+      <span class="nt">&quot;invite_info_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span> 
+    <span class="p">{</span>
+      <span class="nt">&quot;staff_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+      <span class="nt">&quot;invite_info_uid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>messageContent参数说明</li>
 </ul>
 <table>
 <thead>
@@ -390,189 +401,43 @@
 <td align="left">否</td>
 </tr>
 <tr>
-<td align="left">uid</td>
+<td align="left">subserver</td>
 <td align="left">是</td>
 <td align="left">String</td>
-<td align="left">当前企业uid</td>
+<td align="left">delete:删除员工</td>
 <td align="left">否</td>
 </tr>
 <tr>
-<td align="left">page_num</td>
+<td align="left">staff_data</td>
 <td align="left">是</td>
-<td align="left">String</td>
-<td align="left">页码</td>
+<td align="left">JSONArray</td>
+<td align="left">员工信息</td>
 <td align="left">否</td>
 </tr>
 <tr>
-<td align="left">page_size</td>
+<td align="left">staff_invite_status</td>
 <td align="left">是</td>
 <td align="left">String</td>
-<td align="left">每页显示的条数</td>
+<td align="left">员工邀约状态</td>
+<td align="left">否</td>
+</tr>
+<tr>
+<td align="left">staff_uid</td>
+<td align="left">是</td>
+<td align="left">String</td>
+<td align="left">员工的uid</td>
 <td align="left">否</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>服务结果示例
-    <code>json
-    {
-      "code": 1, 
-      "msg": "员工信息查询完成", 
-      "totalSize": 5, 
-      "staff_info": [
-        {
-          "_id": "e0dcf084-fd8f-4007-a709-87ca9be398e2", 
-          "uid": "e0dcf084-fd8f-4007-a709-87ca9be398e2", 
-          "staff_jobnumber": "...工号", 
-          "staff_name": "...名称", 
-          "staff_dept": null, 
-          "staff_mobilephone": "17312341234", 
-          "staff_mailbox": "17312341234", 
-          "staff_loginaccuid": "a5a5111d-df52-430c-88b5-429ecb584c70", 
-          "valid_status": 0, 
-          "staff_invitestate": 3, 
-          "staff_usertype": null, 
-          "erp_number": "17312341234", 
-          "erp_staff_code": "17312341234", 
-          "erp_staff_name": null, 
-          "staff_usercode": "admin", 
-          "staff_inviteinforuid": "123", 
-          "staff_phone_area_code": "86"
-        }, 
-        {
-          "_id": "e6ce91c3-6f0a-4df8-86a7-46d31e742c97", 
-          "uid": "e6ce91c3-6f0a-4df8-86a7-46d31e742c97", 
-          "staff_jobnumber": "修改...工号", 
-          "staff_name": "许改...名称", 
-          "staff_dept": "销售部", 
-          "staff_mobilephone": "7717312341234", 
-          "staff_mailbox": "17312341234", 
-          "staff_loginaccuid": "a5a5111d-df52-430c-88b5-429ecb584c70", 
-          "valid_status": 0, 
-          "staff_invitestate": 3, 
-          "staff_usertype": null, 
-          "erp_number": "7717312341234", 
-          "erp_staff_code": "7717312341234", 
-          "erp_staff_name": null, 
-          "staff_usercode": "admin", 
-          "staff_inviteinforuid": null, 
-          "staff_phone_area_code": "186"
-        }
-      ]
-    }</code></li>
-<li>服务结果参数说明</li>
+<li>服务结果示例</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">类型</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">productid</td>
-<td align="left">String</td>
-<td align="left">当前项目对应的productid</td>
-</tr>
-<tr>
-<td align="left">spaceid</td>
-<td align="left">String</td>
-<td align="left">当前项目对应的spaceid</td>
-</tr>
-<tr>
-<td align="left">systemid</td>
-<td align="left">String</td>
-<td align="left">当前项目对应的systemid</td>
-</tr>
-<tr>
-<td align="left">uid</td>
-<td align="left">String</td>
-<td align="left">员工uid</td>
-</tr>
-<tr>
-<td align="left">staff_jobnumber</td>
-<td align="left">String</td>
-<td align="left">工号</td>
-</tr>
-<tr>
-<td align="left">staff_name</td>
-<td align="left">String</td>
-<td align="left">员工姓名</td>
-</tr>
-<tr>
-<td align="left">staff_depart</td>
-<td align="left">String</td>
-<td align="left">员工部门</td>
-</tr>
-<tr>
-<td align="left">staff_mobilephone</td>
-<td align="left">String</td>
-<td align="left">员工手机号</td>
-</tr>
-<tr>
-<td align="left">staff_mailbox</td>
-<td align="left">String</td>
-<td align="left">邮箱</td>
-</tr>
-<tr>
-<td align="left">staff_loginaccuid</td>
-<td align="left">String</td>
-<td align="left">关联登录账号uid</td>
-</tr>
-<tr>
-<td align="left">valid_status</td>
-<td align="left">String</td>
-<td align="left">员工状态</td>
-</tr>
-<tr>
-<td align="left">staff_invitestate</td>
-<td align="left">String</td>
-<td align="left">员工邀约状态</td>
-</tr>
-<tr>
-<td align="left">staff_usertype</td>
-<td align="left">String</td>
-<td align="left">用户类型</td>
-</tr>
-<tr>
-<td align="left">erp_number</td>
-<td align="left">String</td>
-<td align="left">ERP账号</td>
-</tr>
-<tr>
-<td align="left">erp_staff_code</td>
-<td align="left">String</td>
-<td align="left">ERP员工编码</td>
-</tr>
-<tr>
-<td align="left">erp_staff_name</td>
-<td align="left">String</td>
-<td align="left">ERP员工名称</td>
-</tr>
-<tr>
-<td align="left">staff_usercode</td>
-<td align="left">String</td>
-<td align="left">用来登录飞道系统的usercode</td>
-</tr>
-<tr>
-<td align="left">staff_inviteinforuid</td>
-<td align="left">String</td>
-<td align="left">邀约信息UID</td>
-</tr>
-<tr>
-<td align="left">staff_phone_area_code</td>
-<td align="left">String</td>
-<td align="left">手机区号</td>
-</tr>
-<tr>
-<td align="left">role_name</td>
-<td align="left">String数组</td>
-<td align="left">角色数组，里边存放的多个角色</td>
-</tr>
-</tbody>
-</table>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;批量解绑执行成功&quot;</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -594,7 +459,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="新建员工信息.html" title="版本更新说明" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="批量删除员工服务使用说明文档.html" title="版本更新说明" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -609,13 +474,13 @@
           </a>
         
         
-          <a href="邀约员工服务使用说明文档.html" title="版本更新说明" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="提醒员工服务使用说明文档.html" title="提醒员工服务" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                版本更新说明
+                提醒员工服务
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
