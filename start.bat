@@ -1,2 +1,5 @@
-mkdocs build --clean
-mkdocs -q serve
+git pull origin master
+git add .
+git commit -m ''
+git push origin master
+mkdocs gh-deploy
