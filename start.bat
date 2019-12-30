@@ -1,3 +1,4 @@
+mkdocs build --clean
 git pull origin master
 git add .
 git commit -m ''
